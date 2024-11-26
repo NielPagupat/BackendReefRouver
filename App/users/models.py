@@ -25,4 +25,6 @@ class CustomUser(AbstractUser):
     objects = CustomUserManager()
 
     def __str__(self) -> str:
-        return '{}-{}'.format(self.username, self.email)
+        return '{}-{}'.format(self.email, self.last_name)
+
+

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'App.users',
+    'App.data',
+    'App.DeviceRequest',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +106,8 @@ DATABASES = {
     }
 }
 
+MEDIA_URL = '/media/'  # Public URL to serve media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store media files
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
